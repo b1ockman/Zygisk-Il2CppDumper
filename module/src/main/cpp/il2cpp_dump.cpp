@@ -348,6 +348,7 @@ void il2cpp_dump(const char *outDir) {
     size_t size;
     auto domain = il2cpp_domain_get();
     auto assemblies = il2cpp_domain_get_assemblies(domain, &size);
+    size = 1; // Dump Assembly-Csharp.dll (1th image) only
     std::stringstream imageOutput;
     for (int i = 0; i < size; ++i) {
         auto image = il2cpp_assembly_get_image(assemblies[i]);
